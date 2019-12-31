@@ -10,11 +10,11 @@ In the end, the agent was able to achieve a consistent profit over ~810,000 hand
 
 The blackjack simulator encodes all the basic rules, mechanics, and decisions for blackjack. 
 For the purposes of this project, I implemented a simple version of blackjack which favours my agent, and likely does not exist in any casino or friend's party game:
-    - Dealer stands on soft 17
-    - Blackjack plays 3:2
-    - Player can only hit, stand, or double down (no splits or surrenders)
-    - There is no reshuffling of the deck; cards are played and discarded until there are less than 10 cards left in the shoe
-    - There are no limits on bet sizes and no-one watching for telltale signs of card counting
+- Dealer stands on soft 17
+- Blackjack plays 3:2
+- Player can only hit, stand, or double down (no splits or surrenders)
+- There is no reshuffling of the deck; cards are played and discarded until there are less than 10 cards left in the shoe
+- There are no limits on bet sizes and no-one watching for telltale signs of card counting
 Additionally, the simulator can take any number of decks in a shoe, set the minimum bet to any number, and define the number of rounds (shoes to play)
 
 ### Agent
@@ -56,36 +56,36 @@ print(display)
 
 ## Results
 Using 100,000 rounds (~810,000 hands) to test the long term overall performance of the strategy: 
-    Player wins ~43.5% of the time
-    Dealer wins ~48.3% of the time
-    A tie occurs ~8.2% of the time
+- Player wins ~43.5% of the time
+- Dealer wins ~48.3% of the time
+- A tie occurs ~8.2% of the time
 
 ### Ten Count
 Using Thorp's Ten Count strategy under the following parameters:
-    min_bet  = 1
-    num_decks = 1
-    num_rounds = 100000
-    Increase bet size when count > 30
-    Increased bet = running_count * 10
+- min_bet  = 1
+- num_decks = 1
+- num_rounds = 100000
+- Increase bet size when count > 30
+- Increased bet = running_count * 10
     
 Despite losing more than the dealer, the agent manages to consistently return a profit over 100,000 rounds. However the profit/loss ranges from 300-500k, which is a significant distribution considering the huge sample size. The bet sizes ranged from $1 up to ~$700 due to a high running_count number.
 
 ### Hi-Lo
 Using the Hi-Lo strategy strategy under the following parameters:
-    min_bet  = 1
-    num_decks = 1
-    num_rounds = 100000
-    Increase bet size when count > 5
-    Increased bet = running_count * 10
+- min_bet  = 1
+- num_decks = 1
+- num_rounds = 100000
+- Increase bet size when count > 5
+- Increased bet = running_count * 10
 
 As with the Ten-Count strategy, the agent also consistently returns a profit over 100,000 rounds, with the profit/loss ranging from 40-50k. The reason for the difference between the two strategy payoffs can be attributed to the much lower betting pattern from $1 to ~$200, but can be scaled accordingly to achieve the same levels of profit.
 
 ### Note:
 These parameters are not indicative of the optimal values to use to achieve the highest or most consistent payoff, rather they have simply been chosen as an example demonstrate the program.
 
-## NB
+## N.B.
 While card counting is not illegal, it is disliked by casinos and thus discouraged.
-This project is not intended to aid anyone in card counting, rather it is an exploration into the concept of card counting and beating the odds. Realistically, the use of constant reshuffling, multiple decks, as well as people watching for betting patterns that indicate card counting will prevent people fron using such card counting strategies. The limitations of this blackjack simulation means that applying the algorithm to real life will likely lead to lost money. I take no responsibility. 
+This project is not intended to aid anyone in card counting, rather it is an exploration into the concept of card counting and beating the odds. Realistically, the use of constant reshuffling, multiple decks, as well as people watching for betting patterns that indicate card counting will prevent people fron using such card counting strategies. The limitations of this blackjack simulation means that applying the algorithm to real life will likely lead to lost money. 
 
 ## Improvements and todo
 - Incorporating the card count into the basic strategy (i.e. deciding which action to take) instead of only bet sizing should yield better results
@@ -95,7 +95,7 @@ This project is not intended to aid anyone in card counting, rather it is an exp
 - The implementation can be cleaned up, optimise performance (string concatenation)
 
 ## License and contributing
-MIT License
+MIT License.
 Feel free to contribute, give feedback, or use however you like.
 
 
