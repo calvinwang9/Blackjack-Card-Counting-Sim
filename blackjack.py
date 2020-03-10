@@ -61,11 +61,11 @@ def play_game(num_rounds, num_decks, min_bet):
     hands_played = 0
     cash = 0
     
-    for i in range(num_rounds):
+    for _ in range(num_rounds):
         # initialise shuffled deck
         single_deck = init_deck()
         deck = single_deck
-        for i in range(num_decks-1):
+        for _ in range(num_decks-1):
             deck = deck + single_deck
         random.shuffle(deck)
         
